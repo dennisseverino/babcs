@@ -1,6 +1,10 @@
 # BABCS Claude Code Instructions
 
 Follow the repository-wide engineering rules in `AGENTS.md`.
+At the start of each session, read only the five most recent entries under
+`## Sessions` in `conversations_log.md`. Read older entries only when required
+for missing historical context. Append an accurate entry after completing
+repository work.
 
 ## Project Context
 
@@ -30,4 +34,3 @@ npm run build
 ```
 
 Report any checks that could not be run or did not pass.
-

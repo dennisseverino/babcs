@@ -26,12 +26,16 @@ babcs/
 |   `-- src/        Frontend source
 |-- AGENTS.md       Instructions for coding agents
 |-- CLAUDE.md       Instructions for Claude Code
+|-- conversations_log.md  AI-assisted development history
 `-- README.md       Contributor setup and workflow
 ```
 
 ## Working Rules
 
 - Read the relevant source and configuration before editing.
+- At the start of each session, read only the five most recent entries under
+  `## Sessions` in `conversations_log.md`. Read older entries only when the
+  current task requires historical details not covered by those entries.
 - Keep changes focused on the requested behavior.
 - Follow existing React, TypeScript, CSS, and naming conventions.
 - Prefer simple components and local patterns over premature abstractions.
@@ -41,6 +45,8 @@ babcs/
   output.
 - Preserve user changes already present in the working tree.
 - Update documentation when setup, scripts, or architecture changes.
+- At the end of each completed session, add a new entry at the top of the
+  `conversations_log.md` Sessions section without rewriting older entries.
 
 ## Frontend Commands
 
@@ -89,4 +95,3 @@ manual verification for user-facing behavior.
 2. Establish routing, layout, styling, and component conventions.
 3. Select the backend, database, authentication, and API contract.
 4. Add automated tests and continuous integration.
-
