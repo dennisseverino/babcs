@@ -6,7 +6,8 @@
 .service-nav-links { display: flex; gap: 36px; }
 .service-nav-links a { padding-block: 7px; color: #5f6b7c; font-size: 14px; text-decoration: none; }
 .service-nav-links a.active { border-bottom: 1px solid #111; color: #111; }
-.service-contact { padding: 12px 25px; color: #fff; background: #090b0f; font-size: 11px; font-weight: 800; letter-spacing: .04em; text-decoration: none; text-transform: uppercase; }
+.service-contact { display:inline-flex; min-height:36px; align-items:center; justify-content:center; border-radius:5px; padding:0 22px; color:#fff; background:#090b0f; font-size:12px; font-weight:700; letter-spacing:0; text-decoration:none; text-transform:none; }
+.service-menu-toggle { display:none; width:44px; height:44px; border:0; border-radius:4px; padding:10px; background:transparent; cursor:pointer; }.service-menu-toggle span { display:block; width:23px; height:2px; margin:5px auto; background:#111827; }
 .service-section { padding-block: 90px; }
 .service-kicker { display: inline-block; margin-bottom: 20px; border-radius: 3px; padding: 6px 10px; color: #005f46; background: var(--mint); font-size: 10px; font-weight: 800; letter-spacing: .09em; text-transform: uppercase; }
 .service-page h1 { margin: 0 0 25px; font-size: clamp(42px,5vw,62px); line-height: 1.08; letter-spacing: -.045em; }
@@ -78,3 +79,73 @@
 @media(max-width:850px){.it-specializations,.web-platform,.it-value,.mission-page-hero,.evolution-grid,.leader-grid,.inquire-layout{grid-template-columns:1fr}.mobile-card{grid-template-columns:1fr 1fr}.it-stats .page-container{grid-template-columns:1fr 1fr;gap:35px}.mission-pillar-grid{grid-template-columns:1fr 1fr}.mission-pillar-grid .wide{grid-column:span 2}.inquire-intro h1{font-size:44px}.inquire-sidebar{display:grid;grid-template-columns:1fr 1fr;gap:20px}.office-card{margin-top:0}}
 @media(max-width:520px){.service-nav-links{font-size:12px}.service-page h1{font-size:40px}.service-actions{flex-direction:column}.service-card{padding:27px}.feature-list,.metric-row,.culture-layout{grid-template-columns:1fr}.method-grid,.lifecycle-grid,.audit-stats{grid-template-columns:1fr}.audit-cta{padding:50px 30px}.service-footer-inner{display:block}.service-footer-inner>*{display:block;margin-bottom:20px}.service-footer-links{display:grid;grid-template-columns:1fr 1fr}}
 @media(max-width:520px){.it-hero{min-height:650px}.it-specializations,.web-platform,.mobile-card,.it-stats .page-container,.mission-pillar-grid,.clarity-card,.inquire-sidebar,.objective-grid,.context-fields{grid-template-columns:1fr}.mission-pillar-grid .wide,.context-fields .full{grid-column:1}.mission-values{flex-direction:column}.mission-values span{margin-bottom:8px}.leader-grid h2{font-size:32px}.inquire-main{padding-top:45px}.inquire-form-card{padding:25px}.form-actions{flex-direction:column-reverse}.form-actions .service-button{width:100%}}
+
+/* Responsive UX and interaction layer */
+.service-page { overflow-x:hidden; }
+.service-page main { animation:page-enter .55s ease-out both; }
+.service-button,.service-contact,.service-card,.it-feature,.objective-grid button,.service-nav-links a { transition:transform .22s ease,box-shadow .22s ease,border-color .22s ease,background-color .22s ease,color .22s ease; }
+.service-button:hover,.service-contact:hover { transform:translateY(-2px); box-shadow:0 10px 22px rgba(15,23,42,.16); }
+.service-card:hover,.it-feature:hover { transform:translateY(-4px); box-shadow:0 14px 30px rgba(15,23,42,.09); }
+.service-nav-links a:hover { color:#009b70; }
+.objective-grid button:hover { border-color:#009b70; transform:translateY(-2px); }
+.service-button:focus-visible,.service-contact:focus-visible,.service-menu-toggle:focus-visible,.service-nav-links a:focus-visible,.objective-grid button:focus-visible,.context-fields input:focus-visible,.context-fields select:focus-visible,.context-fields textarea:focus-visible { outline:3px solid rgba(0,155,112,.3); outline-offset:3px; }
+.form-step { animation:step-enter .3s ease-out both; }
+.inquire-success>b { animation:success-pop .45s cubic-bezier(.2,.8,.2,1.2) both; }
+@keyframes page-enter { from { opacity:0; transform:translateY(10px); } to { opacity:1; transform:none; } }
+@keyframes step-enter { from { opacity:0; transform:translateX(14px); } to { opacity:1; transform:none; } }
+@keyframes success-pop { from { opacity:0; transform:scale(.65); } to { opacity:1; transform:scale(1); } }
+
+@media(max-width:850px){
+  .service-nav { position:relative; flex-wrap:nowrap; padding-block:12px; }
+  .service-menu-toggle { display:block; order:3; margin-left:4px; }
+  .service-contact { order:2; min-height:40px; margin-left:auto; padding-inline:14px; font-size:10px; }
+  .service-nav-links { position:absolute; top:100%; right:0; left:0; z-index:10; display:grid; max-height:0; width:auto; gap:0; overflow:hidden; padding:0 16px; border:0; background:#fff; box-shadow:0 16px 30px rgba(15,23,42,.12); opacity:0; transform:translateY(-8px); transition:max-height .3s ease,opacity .2s ease,transform .3s ease,padding .3s ease; }
+  .service-nav-links.is-open { max-height:390px; padding:10px 16px 18px; border-top:1px solid #e5e7eb; opacity:1; transform:none; }
+  .service-nav-links a { display:flex; min-height:48px; align-items:center; border-bottom:1px solid #eef0f2; font-size:15px; }
+  .service-nav-links a.active { border-bottom:1px solid #009b70; color:#009b70; }
+  .accounting-hero-grid { min-height:auto; }
+  .accounting-hero img,.audit-hero img { max-height:430px; object-fit:cover; }
+  .audit-hero { padding-top:65px; }
+  .hr-mandate-image { margin:0; }
+  .hr-quote { right:16px; bottom:-30px; left:16px; max-width:none; }
+  .inquire-form-card { min-height:auto; }
+}
+
+@media(max-width:520px){
+  .service-brand { font-size:19px; }
+  .service-contact { padding-inline:14px; font-size:10px; }
+  .service-section { padding-block:52px; }
+  .service-page h1 { font-size:clamp(36px,11vw,42px); }
+  .service-page h2 { font-size:25px; }
+  .service-page h3 { font-size:21px; }
+  .service-page p { font-size:14px; }
+  .service-actions,.service-actions .service-button { width:100%; }
+  .service-card { min-width:0; }
+  .accounting-hero-grid { padding-block:55px; }
+  .accounting-hero img,.audit-hero img { max-height:300px; }
+  .accounting-cta-grid { gap:35px; }
+  .quick-form { padding:22px; }
+  .audit-heading { align-items:start; }
+  .audit-heading::after { display:none; }
+  .audit-stats { gap:35px; }
+  .audit-stats strong { font-size:31px; }
+  .hr-hero { min-height:590px; }
+  .hr-quote { position:relative; right:auto; bottom:auto; left:auto; margin:-32px 14px 0; }
+  .culture-layout img,.ux-card img,.mobile-card img { height:230px; min-height:0; }
+  .it-value>div>h2 { font-size:34px; }
+  .mission-page-hero { gap:38px; }
+  .mission-page-hero>img { max-height:340px; }
+  .timeline { padding-left:28px; }
+  .timeline article::before { left:-33px; }
+  .leader-section { padding-block:60px; }
+  .leader-image>div { right:12px; bottom:12px; left:12px; }
+  .inquire-main { padding-bottom:70px; }
+  .inquire-intro { margin-bottom:38px; }
+  .inquire-intro h1 { font-size:38px; }
+  .objective-grid button { min-height:140px; padding:22px; }
+  .form-progress>div { gap:12px; font-size:9px; }
+  .process-card { padding:24px; }
+  .service-footer-links { gap:14px; }
+}
+
+@media(prefers-reduced-motion:reduce){.service-page main,.form-step,.inquire-success>b{animation:none}.service-button,.service-contact,.service-card,.it-feature,.objective-grid button,.service-nav-links,.service-nav-links a{transition:none}}
