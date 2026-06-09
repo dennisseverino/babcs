@@ -14,6 +14,7 @@
 }
 
 .site-shell { overflow: hidden; }
+.site-shell main { animation: home-enter .55s ease-out both; }
 .container { width: min(1280px, calc(100% - 80px)); margin-inline: auto; }
 .section { padding-block: 96px; }
 .icon { display: block; stroke: currentColor; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1.7; }
@@ -27,6 +28,7 @@
 .menu-toggle span { display: block; width: 22px; height: 2px; margin: 4px; background: var(--navy); }
 .button { display: inline-flex; min-height: 52px; align-items: center; justify-content: center; border: 1px solid transparent; border-radius: 5px; padding: 0 28px; font-size: 15px; font-weight: 700; text-decoration: none; text-transform: none; cursor: pointer; transition: transform .2s, box-shadow .2s, background .2s; }
 .button:hover { transform: translateY(-1px); box-shadow: 0 10px 24px rgba(15,23,42,.14); }
+.button:focus-visible, .menu-toggle:focus-visible, .nav-links a:focus-visible, .text-link:focus-visible, .advice-button:focus-visible { outline: 3px solid rgba(0,150,104,.3); outline-offset: 3px; }
 .button-dark { background: var(--navy); color: #fff; }
 .button-light { border-color: rgba(118,119,125,.32); background: #fff; color: #000; }
 .button-small { min-height: 36px; padding-inline: 22px; font-size: 12px; }
@@ -48,6 +50,7 @@
 .services-grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 24px; }
 .service-card { grid-column: span 4; display: flex; min-height: 350px; flex-direction: column; padding: 32px; border: 1px solid var(--border); border-radius: 8px; background: var(--white); box-shadow: var(--shadow); transition: transform .25s, border-color .25s; }
 .service-card:hover { transform: translateY(-3px); border-bottom-color: var(--green); }
+.service-card, .advice-card, .mission-image, .inquiry-card { animation: rise-in .55s ease-out both; }
 .accounting-card { grid-column: span 4; }
 .service-card h3, .advice-card h3 { margin: 0 0 16px; font-size: 23px; letter-spacing: -.02em; }
 .service-card > p, .it-copy > p, .advice-card p { margin: 0 0 24px; color: var(--slate); font-size: 15px; line-height: 1.6; }
@@ -138,7 +141,8 @@
   .nav { height: 68px; }
   .brand { font-size: 20px; }
   .nav-links { top: 68px; }
-  .nav-cta { display: none; }
+  .nav-cta { display: inline-flex; min-height: 40px; margin-left: auto; padding-inline: 14px; font-size: 10px; }
+  .menu-toggle { margin-left: 4px; }
   .hero-section { min-height: 690px; }
   .hero-overlay { background: linear-gradient(90deg, rgba(247,249,251,.98), rgba(247,249,251,.8)); }
   .hero-content h1 { font-size: 40px; }
@@ -160,9 +164,20 @@
   .footer-grid { grid-template-columns: 1fr 1fr; }
   .footer-intro { grid-column: 1 / -1; }
   .footer-bottom, .footer-bottom div { flex-direction: column; gap: 10px; }
+  .section { padding-block: 56px; }
+  .hero-section { min-height: 650px; }
+  .hero-content h1 { font-size: clamp(36px, 11vw, 42px); }
+  .service-card, .advice-card { padding: 26px; }
+  .it-card { gap: 22px; }
+  .stats { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+  .footer-grid { gap: 38px 24px; }
 }
+
+@keyframes home-enter { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+@keyframes rise-in { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after { transition-duration: .01ms !important; }
+  .site-shell main, .service-card, .advice-card, .mission-image, .inquiry-card { animation: none; }
 }

@@ -69,6 +69,102 @@ Anything the AI or developer should know before picking this up again.
 **AI Model:** OpenAI Codex (GPT-5)
 
 #### Task
+Match the shared Inquire button corner radius to the Home page button.
+
+#### Solution
+- Added the Home page's `5px` border radius to the shared page-header Inquire
+  button in `ServicePages.css`.
+
+#### Troubleshooting
+None.
+
+#### Bugs Encountered
+None.
+
+#### Outcome
+- [x] Completed / [ ] Partial / [ ] Blocked
+The Inquire button radius is consistent across all pages.
+
+#### Notes for Next Session
+None.
+
+---
+
+### Session - 2026-06-09
+
+**Branch:** `feat/stitch-landing-page`
+**AI Model:** OpenAI Codex (GPT-5)
+
+#### Task
+Match the shared page-header Inquire button size to the Home page header button.
+
+#### Solution
+- Updated `ServicePages.css` so the shared Inquire CTA uses the same desktop
+  and mobile height, padding, font size, weight, casing, and letter spacing as
+  the Home page Inquire CTA.
+
+#### Troubleshooting
+None.
+
+#### Bugs Encountered
+None.
+
+#### Outcome
+- [x] Completed / [ ] Partial / [ ] Blocked
+The Inquire button is consistently sized across all page headers.
+
+#### Notes for Next Session
+None.
+
+---
+
+### Session - 2026-06-09
+
+**Branch:** `feat/stitch-landing-page`
+**AI Model:** OpenAI Codex (GPT-5)
+
+#### Task
+Improve mobile responsiveness and interaction design across all pages, add
+animations, and replace the shared "Contact Sales" label with "Inquire".
+
+#### Solution
+- Replaced the shared service-page mobile link row with an accessible
+  collapsible navigation menu and retained a compact Inquire CTA on mobile.
+- Improved mobile stacking, typography, spacing, image sizing, forms, cards,
+  statistics, footers, and touch target sizes across Home and service pages.
+- Added restrained page-entry, card, button, form-step, and success-state
+  animations with keyboard focus styles and reduced-motion support.
+- Added `aria-pressed` feedback to the Inquire service-selection controls.
+- Replaced the shared "Contact Sales" CTA with "Inquire" on every page.
+
+#### Troubleshooting
+- A combined verification command stopped because `rg` correctly returned exit
+  code 1 when no "Contact Sales" text remained. Lint and build were rerun
+  independently.
+- The compact service stylesheet required a final override layer for reliable,
+  maintainable responsive changes.
+
+#### Bugs Encountered
+None.
+
+#### Outcome
+- [x] Completed / [ ] Partial / [ ] Blocked
+Mobile navigation and page layouts are improved, interactions are animated,
+and lint and production build pass.
+
+#### Notes for Next Session
+- Motion honors the operating system's reduced-motion preference.
+- The shared responsive override layer is at the end of
+  `src/pages/services/ServicePages.css`.
+
+---
+
+### Session - 2026-06-09
+
+**Branch:** `feat/stitch-landing-page`
+**AI Model:** OpenAI Codex (GPT-5)
+
+#### Task
 Integrate the newly extracted IT, Inquire, and Mission Stitch screens into the
 React frontend.
 
