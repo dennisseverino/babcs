@@ -1,0 +1,382 @@
+<!DOCTYPE html><html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Inquiry | BABCS Corp</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary": "#000000",
+                        "secondary-container": "#d0e1fb",
+                        "outline-variant": "#c6c6cd",
+                        "surface-variant": "#e0e3e5",
+                        "background": "#f7f9fb",
+                        "tertiary-fixed": "#6ffbbe",
+                        "surface-tint": "#565e74",
+                        "primary": "#000000",
+                        "secondary-fixed-dim": "#b7c8e1",
+                        "inverse-on-surface": "#eff1f3",
+                        "on-primary-fixed": "#131b2e",
+                        "error-container": "#ffdad6",
+                        "primary-fixed": "#dae2fd",
+                        "on-tertiary-fixed": "#002113",
+                        "primary-fixed-dim": "#bec6e0",
+                        "on-secondary-fixed-variant": "#38485d",
+                        "on-secondary": "#ffffff",
+                        "inverse-surface": "#2d3133",
+                        "on-surface": "#191c1e",
+                        "on-error": "#ffffff",
+                        "on-tertiary-container": "#009668",
+                        "on-primary-fixed-variant": "#3f465c",
+                        "tertiary-fixed-dim": "#4edea3",
+                        "surface-container-lowest": "#ffffff",
+                        "tertiary-container": "#002113",
+                        "secondary": "#505f76",
+                        "on-tertiary": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "surface-container-highest": "#e0e3e5",
+                        "on-surface-variant": "#45464d",
+                        "surface-bright": "#f7f9fb",
+                        "on-primary-container": "#7c839b",
+                        "on-tertiary-fixed-variant": "#005236",
+                        "on-secondary-fixed": "#0b1c30",
+                        "surface-container-low": "#f2f4f6",
+                        "surface-container": "#eceef0",
+                        "outline": "#76777d",
+                        "surface-dim": "#d8dadc",
+                        "surface": "#f7f9fb",
+                        "on-secondary-container": "#54647a",
+                        "inverse-primary": "#bec6e0",
+                        "on-background": "#191c1e",
+                        "secondary-fixed": "#d3e4fe",
+                        "primary-container": "#131b2e",
+                        "on-primary": "#ffffff",
+                        "surface-container-high": "#e6e8ea",
+                        "error": "#ba1a1a"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "gutter": "24px",
+                        "margin-desktop": "40px",
+                        "container-max": "1280px",
+                        "margin-mobile": "16px",
+                        "base": "8px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Inter"],
+                        "display-lg-mobile": ["Inter"],
+                        "body-md": ["Inter"],
+                        "data-mono": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "display-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "display-lg-mobile": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "data-mono": ["14px", {"lineHeight": "20px", "fontWeight": "500"}],
+                        "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .form-step { display: none; }
+        .form-step.active { display: block; }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(8px);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md selection:bg-primary-fixed-dim selection:text-on-primary-fixed">
+<!-- TopNavBar -->
+<nav class="w-full top-0 sticky bg-surface-container-lowest dark:bg-surface-container-low shadow-sm border-b border-outline-variant/10 dark:border-outline-variant/20 z-50">
+<div class="flex justify-between items-center h-20 px-margin-desktop max-w-container-max mx-auto">
+<div class="font-headline-md text-headline-md font-bold text-primary dark:text-inverse-primary cursor-pointer active:scale-95 transition-all">
+                BABCS Corp
+            </div>
+<div class="hidden md:flex gap-8 items-center">
+<a class="font-body-md text-body-md text-secondary hover:text-primary transition-colors duration-200" href="#">Accounting</a>
+<a class="font-body-md text-body-md text-secondary hover:text-primary transition-colors duration-200" href="#">HR</a>
+<a class="font-body-md text-body-md text-secondary hover:text-primary transition-colors duration-200" href="#">IT</a>
+<a class="font-body-md text-body-md text-secondary hover:text-primary transition-colors duration-200" href="#">Audit</a>
+<a class="font-body-md text-body-md text-secondary hover:text-primary transition-colors duration-200" href="#">Mission</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="font-body-md text-body-md text-primary dark:text-inverse-primary border-b-2 border-primary dark:border-inverse-primary pb-1 font-bold cursor-pointer transition-all">Contact Sales</button>
+</div>
+</div>
+</nav>
+<main class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-16">
+<!-- Hero Header -->
+<header class="mb-16 max-w-3xl">
+<h1 class="font-display-lg text-display-lg-mobile md:text-display-lg text-primary mb-6">Partnering in your <span class="text-on-tertiary-container">Strategic</span> Growth.</h1>
+<p class="font-body-lg text-body-lg text-secondary">Initiate a consultation with our multidisciplinary team. Provide details below to be matched with the appropriate regional expert in Accounting, HR, IT, or Audit.</p>
+</header>
+<div class="grid grid-cols-12 gap-gutter">
+<!-- Multi-Step Form Section (8 Columns) -->
+<div class="col-span-12 lg:col-span-8">
+<div class="bg-surface-container-lowest rounded-xl p-8 shadow-sm border border-outline-variant/20">
+<!-- Progress Bar -->
+<div class="mb-10">
+<div class="flex justify-between mb-2">
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-widest" id="step-indicator">Step 1 of 3: Primary Objective</span>
+<span class="font-label-sm text-label-sm text-primary" id="step-percent">33%</span>
+</div>
+<div class="h-1 w-full bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-primary transition-all duration-500 w-1/3" id="progress-bar"></div>
+</div>
+</div>
+<form id="inquiry-form">
+<!-- Step 1: Services Selection -->
+<div class="form-step active" id="step-1">
+<h2 class="font-headline-md text-headline-md text-primary mb-8">What are you looking to achieve?</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<label class="group relative flex flex-col p-6 border border-outline-variant rounded-lg cursor-pointer hover:border-primary transition-all duration-200">
+<input class="absolute top-4 right-4 h-5 w-5 text-primary border-outline rounded-sm focus:ring-primary" name="service" type="checkbox" value="accounting">
+<span class="material-symbols-outlined text-secondary group-hover:text-primary mb-4" data-icon="account_balance">account_balance</span>
+<span class="font-bold text-primary block mb-1">Accounting &amp; Tax</span>
+<span class="text-body-md text-on-surface-variant">Strategic financial reporting and compliance.</span>
+</label>
+<label class="group relative flex flex-col p-6 border border-outline-variant rounded-lg cursor-pointer hover:border-primary transition-all duration-200">
+<input class="absolute top-4 right-4 h-5 w-5 text-primary border-outline rounded-sm focus:ring-primary" name="service" type="checkbox" value="hr">
+<span class="material-symbols-outlined text-secondary group-hover:text-primary mb-4" data-icon="groups">groups</span>
+<span class="font-bold text-primary block mb-1">Human Resources</span>
+<span class="text-body-md text-on-surface-variant">Workforce planning and culture optimization.</span>
+</label>
+<label class="group relative flex flex-col p-6 border border-outline-variant rounded-lg cursor-pointer hover:border-primary transition-all duration-200">
+<input class="absolute top-4 right-4 h-5 w-5 text-primary border-outline rounded-sm focus:ring-primary" name="service" type="checkbox" value="it">
+<span class="material-symbols-outlined text-secondary group-hover:text-primary mb-4" data-icon="terminal">terminal</span>
+<span class="font-bold text-primary block mb-1">IT Infrastructure</span>
+<span class="text-body-md text-on-surface-variant">Digital transformation and cybersecurity.</span>
+</label>
+<label class="group relative flex flex-col p-6 border border-outline-variant rounded-lg cursor-pointer hover:border-primary transition-all duration-200">
+<input class="absolute top-4 right-4 h-5 w-5 text-primary border-outline rounded-sm focus:ring-primary" name="service" type="checkbox" value="audit">
+<span class="material-symbols-outlined text-secondary group-hover:text-primary mb-4" data-icon="fact_check">fact_check</span>
+<span class="font-bold text-primary block mb-1">Internal Audit</span>
+<span class="text-body-md text-on-surface-variant">Risk assessment and authoritative validation.</span>
+</label>
+</div>
+</div>
+<!-- Step 2: Project Details -->
+<div class="form-step" id="step-2">
+<h2 class="font-headline-md text-headline-md text-primary mb-8">Project Context</h2>
+<div class="space-y-6">
+<div>
+<label class="block font-label-sm text-label-sm text-secondary mb-2 uppercase">Current Challenge</label>
+<textarea class="w-full bg-surface-container-low border border-outline-variant rounded p-4 focus:ring-2 focus:ring-on-tertiary-container focus:border-transparent outline-none transition-all" placeholder="Describe the primary obstacle your organization is facing..." rows="4"></textarea>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<div>
+<label class="block font-label-sm text-label-sm text-secondary mb-2 uppercase">Estimated Timeline</label>
+<select class="w-full bg-surface-container-low border border-outline-variant rounded p-4 focus:ring-2 focus:ring-on-tertiary-container outline-none transition-all">
+<option>Immediate (Under 1 month)</option>
+<option>Short-term (1-3 months)</option>
+<option>Strategic (6+ months)</option>
+</select>
+</div>
+<div>
+<label class="block font-label-sm text-label-sm text-secondary mb-2 uppercase">Scale of Operation</label>
+<select class="w-full bg-surface-container-low border border-outline-variant rounded p-4 focus:ring-2 focus:ring-on-tertiary-container outline-none transition-all">
+<option>SMB (Under 100 Employees)</option>
+<option>Enterprise (100-1000 Employees)</option>
+<option>Global Corp (1000+ Employees)</option>
+</select>
+</div>
+</div>
+</div>
+</div>
+<!-- Step 3: Contact & Logistics -->
+<div class="form-step" id="step-3">
+<h2 class="font-headline-md text-headline-md text-primary mb-8">Point of Contact</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="col-span-2 md:col-span-1">
+<label class="block font-label-sm text-label-sm text-secondary mb-2 uppercase">Full Name</label>
+<input class="w-full bg-surface-container-low border border-outline-variant rounded p-4 focus:ring-2 focus:ring-on-tertiary-container outline-none transition-all" type="text">
+</div>
+<div class="col-span-2 md:col-span-1">
+<label class="block font-label-sm text-label-sm text-secondary mb-2 uppercase">Professional Email</label>
+<input class="w-full bg-surface-container-low border border-outline-variant rounded p-4 focus:ring-2 focus:ring-on-tertiary-container outline-none transition-all" type="email">
+</div>
+<div class="col-span-2 md:col-span-1">
+<label class="block font-label-sm text-label-sm text-secondary mb-2 uppercase">Company</label>
+<input class="w-full bg-surface-container-low border border-outline-variant rounded p-4 focus:ring-2 focus:ring-on-tertiary-container outline-none transition-all" type="text">
+</div>
+<div class="col-span-2 md:col-span-1">
+<label class="block font-label-sm text-label-sm text-secondary mb-2 uppercase">Country</label>
+<input class="w-full bg-surface-container-low border border-outline-variant rounded p-4 focus:ring-2 focus:ring-on-tertiary-container outline-none transition-all" type="text">
+</div>
+</div>
+</div>
+<!-- Form Navigation -->
+<div class="mt-12 flex justify-between">
+<button class="hidden font-body-md py-4 px-8 border border-outline-variant text-secondary rounded hover:bg-surface-container-low transition-all" id="prev-btn" type="button">Previous</button>
+<div class="flex-grow"></div>
+<button class="font-body-md py-4 px-12 bg-primary text-on-primary rounded hover:bg-on-primary-fixed-variant transition-all cursor-pointer" id="next-btn" type="button">Continue</button>
+<button class="hidden font-body-md py-4 px-12 bg-on-tertiary-container text-on-primary rounded hover:opacity-90 transition-all cursor-pointer" id="submit-btn" type="submit">Submit Inquiry</button>
+</div>
+</form>
+</div>
+</div>
+<!-- Sidebar Info (4 Columns) -->
+<div class="col-span-12 lg:col-span-4 space-y-gutter">
+<!-- What Happens Next Bento Section -->
+<div class="bg-primary-container p-8 rounded-xl text-on-primary">
+<h3 class="font-headline-md text-headline-md mb-6">Our Process</h3>
+<div class="space-y-6">
+<div class="flex gap-4">
+<div class="flex-shrink-0 w-8 h-8 rounded-full bg-tertiary-fixed-dim text-on-tertiary-fixed flex items-center justify-center font-bold">1</div>
+<div>
+<p class="font-bold text-on-primary mb-1">Strategic Review</p>
+<p class="text-sm opacity-80">Our sector leads analyze your requirements against current market benchmarks.</p>
+</div>
+</div>
+<div class="flex gap-4">
+<div class="flex-shrink-0 w-8 h-8 rounded-full bg-tertiary-fixed-dim text-on-tertiary-fixed flex items-center justify-center font-bold">2</div>
+<div>
+<p class="font-bold text-on-primary mb-1">Consultation Call</p>
+<p class="text-sm opacity-80">A 30-minute discovery session with a dedicated BABCS advisor (within 24hrs).</p>
+</div>
+</div>
+<div class="flex gap-4">
+<div class="flex-shrink-0 w-8 h-8 rounded-full bg-tertiary-fixed-dim text-on-tertiary-fixed flex items-center justify-center font-bold">3</div>
+<div>
+<p class="font-bold text-on-primary mb-1">Engagement Model</p>
+<p class="text-sm opacity-80">Receive a transparent, milestone-driven proposal tailored to your scale.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Global Offices Map Card -->
+<div class="bg-surface-container-highest rounded-xl overflow-hidden border border-outline-variant/10">
+<div class="h-48 relative">
+<img class="w-full h-full object-cover" data-alt="A cinematic, high-angle architectural shot of a cluster of sleek, modern skyscrapers made of glass and steel in a major global financial hub. The lighting is crisp and cool, reflecting a professional business-oriented atmosphere. The color palette is dominated by deep blues and grays with subtle reflections of a clear sky, embodying the authoritative and strategic identity of BABCS Corp." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBGJ1Z4qjZYV3h3YWZ8leHRNNKAIfo8XzxoXh23p8eXNAri4L4Cml-xa5F8A8mcJnR4nUrqkK_CeHocqIqNzhDUhkL1IfPrwdT_jr4hkHdSzwX6yrQ9xMVqrln6m0OKYTEQw9wV3v0BaXu8HmLaKhsOtXwg04qU6d_19PLiPy53IxVi2uXvkFbopk30Qream03WJlAHzcrUDaFssV_qjkk8C8pP4K4L4FCBc0_ERMM9C6ji8U94DMYYS9pp5CF1htyHqoBkiYhQMuY">
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+<div class="absolute bottom-4 left-4 text-white">
+<p class="font-label-sm uppercase tracking-widest text-[10px]">Headquarters</p>
+<p class="font-bold">London, United Kingdom</p>
+</div>
+</div>
+<div class="p-6 space-y-4">
+<div class="flex justify-between items-start">
+<div>
+<p class="font-bold text-primary">New York</p>
+<p class="text-sm text-secondary">Wall Street District</p>
+</div>
+<span class="material-symbols-outlined text-secondary-fixed-dim" data-icon="pin_drop">pin_drop</span>
+</div>
+<div class="flex justify-between items-start">
+<div>
+<p class="font-bold text-primary">Singapore</p>
+<p class="text-sm text-secondary">Marina Bay Financial</p>
+</div>
+<span class="material-symbols-outlined text-secondary-fixed-dim" data-icon="pin_drop">pin_drop</span>
+</div>
+<div class="flex justify-between items-start">
+<div>
+<p class="font-bold text-primary">Zurich</p>
+<p class="text-sm text-secondary">Bahnhofstrasse Hub</p>
+</div>
+<span class="material-symbols-outlined text-secondary-fixed-dim" data-icon="pin_drop">pin_drop</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full py-12 bg-primary-container dark:bg-tertiary-container mt-20">
+<div class="flex flex-col md:flex-row justify-between items-center px-margin-desktop max-w-container-max mx-auto gap-base">
+<div class="font-headline-md text-headline-md text-on-primary dark:text-on-tertiary mb-6 md:mb-0">
+                BABCS Corp
+            </div>
+<div class="flex flex-wrap justify-center gap-8 font-label-sm text-label-sm text-on-primary-container/80 dark:text-on-tertiary-container/80">
+<a class="hover:text-on-primary dark:hover:text-tertiary-fixed underline transition-all duration-300" href="#">Privacy Policy</a>
+<a class="hover:text-on-primary dark:hover:text-tertiary-fixed underline transition-all duration-300" href="#">Terms of Service</a>
+<a class="hover:text-on-primary dark:hover:text-tertiary-fixed underline transition-all duration-300" href="#">Cookie Policy</a>
+<a class="hover:text-on-primary dark:hover:text-tertiary-fixed underline transition-all duration-300" href="#">Global Offices</a>
+</div>
+<div class="mt-8 md:mt-0 font-label-sm text-label-sm text-on-primary-container/60 dark:text-on-tertiary-container/60">
+                © 2024 BABCS Corp. Strategic, Transparent, and Authoritative.
+            </div>
+</div>
+</footer>
+<script>
+        const steps = document.querySelectorAll('.form-step');
+        const progressBar = document.getElementById('progress-bar');
+        const indicator = document.getElementById('step-indicator');
+        const percent = document.getElementById('step-percent');
+        const nextBtn = document.getElementById('next-btn');
+        const prevBtn = document.getElementById('prev-btn');
+        const submitBtn = document.getElementById('submit-btn');
+
+        let currentStep = 0;
+
+        const stepTitles = [
+            "Step 1 of 3: Primary Objective",
+            "Step 2 of 3: Project Context",
+            "Step 3 of 3: Contact & Logistics"
+        ];
+
+        function updateForm() {
+            steps.forEach((step, index) => {
+                step.classList.toggle('active', index === currentStep);
+            });
+
+            const progress = ((currentStep + 1) / steps.length) * 100;
+            progressBar.style.width = `${progress}%`;
+            indicator.innerText = stepTitles[currentStep];
+            percent.innerText = `${Math.round(progress)}%`;
+
+            prevBtn.classList.toggle('hidden', currentStep === 0);
+            
+            if (currentStep === steps.length - 1) {
+                nextBtn.classList.add('hidden');
+                submitBtn.classList.remove('hidden');
+            } else {
+                nextBtn.classList.remove('hidden');
+                submitBtn.classList.add('hidden');
+            }
+
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        nextBtn.addEventListener('click', () => {
+            if (currentStep < steps.length - 1) {
+                currentStep++;
+                updateForm();
+            }
+        });
+
+        prevBtn.addEventListener('click', () => {
+            if (currentStep > 0) {
+                currentStep--;
+                updateForm();
+            }
+        });
+
+        document.getElementById('inquiry-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Your strategic inquiry has been submitted. A BABCS consultant will reach out within 24 business hours.');
+        });
+    </script>
+</body></html>
