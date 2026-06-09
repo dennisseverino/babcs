@@ -1,0 +1,363 @@
+<!DOCTYPE html><html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "tertiary": "#000000",
+                    "secondary-container": "#d0e1fb",
+                    "outline-variant": "#c6c6cd",
+                    "surface-variant": "#e0e3e5",
+                    "background": "#f7f9fb",
+                    "tertiary-fixed": "#6ffbbe",
+                    "surface-tint": "#565e74",
+                    "primary": "#000000",
+                    "secondary-fixed-dim": "#b7c8e1",
+                    "inverse-on-surface": "#eff1f3",
+                    "on-primary-fixed": "#131b2e",
+                    "error-container": "#ffdad6",
+                    "primary-fixed": "#dae2fd",
+                    "on-tertiary-fixed": "#002113",
+                    "primary-fixed-dim": "#bec6e0",
+                    "on-secondary-fixed-variant": "#38485d",
+                    "on-secondary": "#ffffff",
+                    "inverse-surface": "#2d3133",
+                    "on-surface": "#191c1e",
+                    "on-error": "#ffffff",
+                    "on-tertiary-container": "#009668",
+                    "on-primary-fixed-variant": "#3f465c",
+                    "tertiary-fixed-dim": "#4edea3",
+                    "surface-container-lowest": "#ffffff",
+                    "tertiary-container": "#002113",
+                    "secondary": "#505f76",
+                    "on-tertiary": "#ffffff",
+                    "on-error-container": "#93000a",
+                    "surface-container-highest": "#e0e3e5",
+                    "on-surface-variant": "#45464d",
+                    "surface-bright": "#f7f9fb",
+                    "on-primary-container": "#7c839b",
+                    "on-tertiary-fixed-variant": "#005236",
+                    "on-secondary-fixed": "#0b1c30",
+                    "surface-container-low": "#f2f4f6",
+                    "surface-container": "#eceef0",
+                    "outline": "#76777d",
+                    "surface-dim": "#d8dadc",
+                    "surface": "#f7f9fb",
+                    "on-secondary-container": "#54647a",
+                    "inverse-primary": "#bec6e0",
+                    "on-background": "#191c1e",
+                    "secondary-fixed": "#d3e4fe",
+                    "primary-container": "#131b2e",
+                    "on-primary": "#ffffff",
+                    "surface-container-high": "#e6e8ea",
+                    "error": "#ba1a1a"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "gutter": "24px",
+                    "margin-desktop": "40px",
+                    "container-max": "1280px",
+                    "margin-mobile": "16px",
+                    "base": "8px"
+            },
+            "fontFamily": {
+                    "headline-md": ["Inter"],
+                    "display-lg-mobile": ["Inter"],
+                    "body-md": ["Inter"],
+                    "data-mono": ["Inter"],
+                    "label-sm": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "display-lg": ["Inter"]
+            },
+            "fontSize": {
+                    "headline-md": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "display-lg-mobile": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "data-mono": ["14px", {"lineHeight": "20px", "fontWeight": "500"}],
+                    "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .level-1-card {
+            box-shadow: 0 4px 12px rgba(15, 23, 42, 0.04);
+        }
+        .service-card-hover:hover {
+            border-bottom: 2px solid #009668;
+        }
+        .structural-grid {
+            background-image: radial-gradient(#e0e3e5 0.5px, transparent 0.5px);
+            background-size: 24px 24px;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md overflow-x-hidden">
+<!-- TopNavBar -->
+<header class="w-full top-0 sticky z-50 bg-surface-container-lowest dark:bg-surface-container-low border-b border-outline-variant/10 dark:border-outline-variant/20 shadow-sm">
+<div class="flex justify-between items-center h-20 px-margin-desktop max-w-container-max mx-auto">
+<div class="font-headline-md text-headline-md font-bold text-primary dark:text-inverse-primary cursor-pointer active:scale-95">
+                BABCS Corp
+            </div>
+<nav class="hidden md:flex items-center gap-gutter">
+<a class="font-body-md text-body-md text-secondary dark:text-secondary-fixed-dim hover:text-primary transition-colors duration-200" href="#">Accounting</a>
+<a class="font-body-md text-body-md text-secondary dark:text-secondary-fixed-dim hover:text-primary transition-colors duration-200" href="#">HR</a>
+<a class="font-body-md text-body-md text-secondary dark:text-secondary-fixed-dim hover:text-primary transition-colors duration-200" href="#">IT</a>
+<a class="font-body-md text-body-md text-secondary dark:text-secondary-fixed-dim hover:text-primary transition-colors duration-200" href="#">Audit</a>
+<a class="font-body-md text-body-md text-primary dark:text-inverse-primary border-b-2 border-primary dark:border-inverse-primary pb-1" href="#">Mission</a>
+</nav>
+<div class="flex items-center gap-gutter">
+<button class="hidden lg:flex items-center gap-2 px-4 py-2 bg-secondary-container text-on-secondary-container rounded-lg font-label-sm uppercase tracking-wider transition-all active:scale-95">
+<span class="material-symbols-outlined text-[18px]">search</span>
+<span>Search</span>
+</button>
+<button class="bg-primary text-on-primary px-6 py-2.5 rounded font-label-sm uppercase tracking-widest hover:bg-opacity-90 transition-all active:scale-95">
+                    Contact Sales
+                </button>
+</div>
+</div>
+</header>
+<main class="relative">
+<!-- Hero Section -->
+<section class="relative pt-24 pb-32 structural-grid">
+<div class="max-w-container-max mx-auto px-margin-desktop grid grid-cols-12 gap-gutter items-center">
+<div class="col-span-12 lg:col-span-7">
+<span class="font-label-sm text-label-sm uppercase tracking-[0.2em] text-on-tertiary-container bg-tertiary-fixed/20 px-3 py-1 rounded mb-6 inline-block">Our Foundation</span>
+<h1 class="font-display-lg text-display-lg text-primary mb-8 leading-tight">Structural Clarity in a Complex World.</h1>
+<p class="font-body-lg text-body-lg text-secondary max-w-2xl mb-10">
+                        At BABCS Corp, we believe that authority is built on transparency. Our mission is to provide the rigorous framework and strategic insight required for global enterprises to grow with unwavering confidence.
+                    </p>
+<div class="flex flex-wrap gap-4">
+<div class="flex items-center gap-3 border-l-4 border-primary pl-4 py-2">
+<span class="font-headline-md text-headline-md text-primary">Strategic</span>
+</div>
+<div class="flex items-center gap-3 border-l-4 border-primary pl-4 py-2">
+<span class="font-headline-md text-headline-md text-primary">Transparent</span>
+</div>
+<div class="flex items-center gap-3 border-l-4 border-primary pl-4 py-2">
+<span class="font-headline-md text-headline-md text-primary">Authoritative</span>
+</div>
+</div>
+</div>
+<div class="col-span-12 lg:col-span-5 relative">
+<div class="aspect-square bg-white level-1-card rounded-xl overflow-hidden relative group">
+<img alt="Corporate Headquarters" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700" data-alt="A low-angle shot of a monolithic modern glass and steel skyscraper reaching into a clear blue sky. The architectural lines are sharp and precise, embodying structural clarity and corporate authority. The lighting is bright and high-contrast, emphasizing the clean surfaces and the sophisticated professional atmosphere of BABCS Corp's global headquarters." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBJ9HyaUGdMCfs_gNboDisLL7BiFjyRV90Fvc1NEkTc-ZE9U1tCd4qbWdNqOxrMm6ZnNrqc8ulW4MoiOeTA2t6e15MQRDG-80Pwh4GQom2cWger8ZzLy7ayfga_6FdNm2aGhFG4HNxLsUhCx7LsMY_dqerFMiliGgYyEKNp74gVgL3NusjfFMFCLn4H-xgRDM0hQET1_eddgXNI9RQTFQ5NJvU6WuZufSq8rArB14ZmwN0yIetwzE53TymkhhLQKr5AU2nnCTGyBo0">
+<div class="absolute inset-0 bg-primary/10 group-hover:bg-transparent transition-colors duration-500"></div>
+</div>
+<!-- Abstract geometric overlay -->
+<div class="absolute -bottom-6 -right-6 w-48 h-48 border border-outline-variant/30 -z-10"></div>
+<div class="absolute -top-6 -left-6 w-48 h-48 bg-primary-container/5 -z-10"></div>
+</div>
+</div>
+</section>
+<!-- Values Section - Bento Grid -->
+<section class="py-24 bg-surface-container-lowest">
+<div class="max-w-container-max mx-auto px-margin-desktop">
+<div class="text-center mb-16">
+<h2 class="font-headline-md text-headline-md text-primary mb-4">The Pillars of Our Commitment</h2>
+<div class="w-24 h-1 bg-primary mx-auto"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<!-- Value 1 -->
+<div class="md:col-span-8 group level-1-card bg-white p-10 rounded-lg service-card-hover transition-all relative overflow-hidden">
+<div class="relative z-10">
+<span class="material-symbols-outlined text-4xl text-secondary mb-6" data-icon="account_balance">account_balance</span>
+<h3 class="font-headline-md text-headline-md text-primary mb-4">Structural Integrity</h3>
+<p class="font-body-md text-body-md text-secondary max-w-lg">
+                                We design systems that withstand the pressures of global market fluctuations. Our accounting and audit frameworks are built on a foundation of absolute precision and regulatory compliance.
+                            </p>
+</div>
+<div class="absolute top-0 right-0 p-8 opacity-5 group-hover:opacity-10 transition-opacity">
+<span class="material-symbols-outlined text-[120px]" data-icon="architecture">architecture</span>
+</div>
+</div>
+<!-- Value 2 -->
+<div class="md:col-span-4 level-1-card bg-white p-10 rounded-lg service-card-hover transition-all">
+<span class="material-symbols-outlined text-4xl text-secondary mb-6" data-icon="auto_awesome">auto_awesome</span>
+<h3 class="font-headline-md text-headline-md text-primary mb-4">Innovation</h3>
+<p class="font-body-md text-body-md text-secondary">
+                            Leveraging AI and predictive analytics to transform retrospective auditing into prospective strategy.
+                        </p>
+</div>
+<!-- Value 3 -->
+<div class="md:col-span-4 level-1-card bg-white p-10 rounded-lg service-card-hover transition-all">
+<span class="material-symbols-outlined text-4xl text-secondary mb-6" data-icon="eco">eco</span>
+<h3 class="font-headline-md text-headline-md text-primary mb-4">Sustainable Growth</h3>
+<p class="font-body-md text-body-md text-secondary">
+                            Focusing on long-term viability over short-term gains, ensuring our clients build legacies that last generations.
+                        </p>
+</div>
+<!-- Value 4 -->
+<div class="md:col-span-8 group level-1-card bg-white p-10 rounded-lg service-card-hover transition-all flex items-center gap-10">
+<div class="flex-1">
+<span class="material-symbols-outlined text-4xl text-secondary mb-6" data-icon="visibility">visibility</span>
+<h3 class="font-headline-md text-headline-md text-primary mb-4">Radical Transparency</h3>
+<p class="font-body-md text-body-md text-secondary">
+                                Clear communication and open reporting are not just features; they are the core of our authoritative presence in the industry. Every data point is a promise kept.
+                            </p>
+</div>
+<div class="hidden lg:block w-1/3 aspect-video bg-surface-container rounded overflow-hidden">
+<img alt="Professional Clarity" class="w-full h-full object-cover" data-alt="A clean, minimalist white office space with large windows and a large wooden desk. Soft natural light illuminates a professional workspace where high-quality architectural blueprints and sleek digital tablets are arranged with mathematical precision. The mood is calm, organized, and deeply professional, representing the radical transparency and strategic depth of BABCS Corp." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD8Xul84in7ifXxY6ARVX-6y2r1vTplokxMcjUcnjbcLMOl4Zv6gsNXPhNJ7RQCmiwYflj6QgTAfO3cwbzhgixsrmpgViBgoA-U912AP5HSIWkJf_Wp80CdNVGg5HXG7cUhK5GWp6j-ZyzXW_Q8J4gTiDLtydFHZom1704UKskT1ipMDSesjnDi1FWkGqgtXweWq2Sc54gG12x0fiVA5C3WLiiChYVWuMl_YvAm8s-ZH54-0KQKs-q0VDYUQppMCAEGTQM89wzD6pA">
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Timeline Section -->
+<section class="py-24 bg-background">
+<div class="max-w-container-max mx-auto px-margin-desktop">
+<div class="grid grid-cols-12 gap-gutter">
+<div class="col-span-12 lg:col-span-4">
+<h2 class="font-headline-md text-headline-md text-primary mb-6">Our Evolution</h2>
+<p class="font-body-md text-body-md text-secondary mb-12">
+                            A timeline of milestones that define our journey from a specialized audit boutique to a global leader in professional services.
+                        </p>
+<div class="p-6 bg-primary-container text-on-primary rounded-lg">
+<h4 class="font-label-sm text-label-sm uppercase mb-4 opacity-70">Total Assets Managed</h4>
+<span class="text-4xl font-bold tracking-tighter tabular-nums">$4.2T+</span>
+</div>
+</div>
+<div class="col-span-12 lg:col-span-8 border-l border-outline-variant/30 pl-gutter lg:pl-12 ml-4 lg:ml-0">
+<!-- Milestone 1 -->
+<div class="relative mb-16">
+<div class="absolute -left-[33px] lg:-left-[57px] top-1 w-4 h-4 rounded-full bg-primary border-4 border-background"></div>
+<span class="font-label-sm text-label-sm text-on-tertiary-container mb-2 block">2010 — FOUNDATION</span>
+<h3 class="font-headline-md text-headline-md text-primary mb-3">The Birth of Clarity</h3>
+<p class="font-body-md text-body-md text-secondary">
+                                BABCS Corp was founded with a single mission: to bring institutional-grade auditing to emerging markets with total transparency.
+                            </p>
+</div>
+<!-- Milestone 2 -->
+<div class="relative mb-16">
+<div class="absolute -left-[33px] lg:-left-[57px] top-1 w-4 h-4 rounded-full bg-primary border-4 border-background"></div>
+<span class="font-label-sm text-label-sm text-on-tertiary-container mb-2 block">2015 — EXPANSION</span>
+<h3 class="font-headline-md text-headline-md text-primary mb-3">Strategic Diversification</h3>
+<p class="font-body-md text-body-md text-secondary">
+                                Launched our HR and IT Advisory divisions, integrating human capital strategy with technological infrastructure to provide a 360-degree service model.
+                            </p>
+</div>
+<!-- Milestone 3 -->
+<div class="relative mb-16">
+<div class="absolute -left-[33px] lg:-left-[57px] top-1 w-4 h-4 rounded-full bg-primary border-4 border-background"></div>
+<span class="font-label-sm text-label-sm text-on-tertiary-container mb-2 block">2021 — INNOVATION</span>
+<h3 class="font-headline-md text-headline-md text-primary mb-3">AI-Driven Audit Protocols</h3>
+<p class="font-body-md text-body-md text-secondary">
+                                Pioneered the use of proprietary machine learning models for real-time risk assessment, reducing audit turnaround times by 40% while increasing accuracy.
+                            </p>
+</div>
+<!-- Milestone 4 -->
+<div class="relative">
+<div class="absolute -left-[33px] lg:-left-[57px] top-1 w-4 h-4 rounded-full bg-primary border-4 border-background"></div>
+<span class="font-label-sm text-label-sm text-on-tertiary-container mb-2 block">TODAY — LEADERSHIP</span>
+<h3 class="font-headline-md text-headline-md text-primary mb-3">A Global Authority</h3>
+<p class="font-body-md text-body-md text-secondary">
+                                Operating in 14 countries, BABCS Corp is recognized as the gold standard for strategic professional services.
+                            </p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Leadership Message -->
+<section class="py-24 bg-primary-container text-on-primary">
+<div class="max-w-container-max mx-auto px-margin-desktop">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+<div class="relative">
+<img alt="CEO Portrait" class="w-full aspect-[4/5] object-cover rounded-lg shadow-2xl grayscale brightness-90" data-alt="A dignified and authoritative corporate leader in a sharp navy blue tailored suit, sitting in a modern boardroom with soft ambient lighting. The background features a blurred view of a sophisticated city skyline at dusk. The leader's expression is one of calm confidence and strategic focus, perfectly capturing the authoritative and transparent essence of BABCS Corp leadership." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCbTErUJa2i98qPGbpUhyQ1yQa253AlfJzdpkAQN8y8PHasm4PnSV_-JB_Nzy5Y_v756hNO22cBmvBfaw-xAQOgkAIknzEEZrSTMDHOlfuDFbpUZuyaK2QtwkK8kYch2XqbOrGUJAnQCLVls8Lc_bg1IPxwtvZuWcgYPhS7lGE7xrnUhu2D3F22P2avR4x032YHpz8s_gR5xyQfGYts9oJhYEsSiL7RZx3f8lVE-4viM_GSzjkdeRGgSgqRKvpF8eucRA5mx1q-fSU">
+<div class="absolute bottom-8 left-8 bg-white text-primary p-6 rounded-sm shadow-xl">
+<p class="font-headline-md text-headline-md mb-1">Alistair Thorne</p>
+<p class="font-label-sm text-label-sm uppercase tracking-widest opacity-70">Chief Executive Officer</p>
+</div>
+</div>
+<div>
+<span class="material-symbols-outlined text-6xl opacity-30 mb-8" data-icon="format_quote">format_quote</span>
+<h2 class="font-display-lg-mobile lg:font-display-lg text-display-lg-mobile lg:text-display-lg mb-8 italic leading-tight">"Integrity is the only structural element that cannot be replaced."</h2>
+<p class="font-body-lg text-body-lg mb-8 opacity-90">
+                            The future of professional services isn't just about data; it's about the trust placed in that data. At BABCS Corp, we don't just provide answers—we provide the certainty that allows our partners to dream larger and act bolder.
+                        </p>
+<p class="font-body-md text-body-md opacity-80 leading-relaxed mb-10">
+                            Our commitment to structural clarity means we peel back the layers of complexity to reveal the core truths of a business. It is this transparency that grants us the authority to lead, and our clients the power to succeed.
+                        </p>
+<div class="flex gap-4">
+<button class="bg-on-primary text-primary-container px-8 py-3 font-label-sm uppercase tracking-widest hover:bg-opacity-90 transition-all">Read The Annual Report</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="py-24 bg-surface-container-high relative overflow-hidden">
+<div class="absolute right-0 top-0 w-1/2 h-full opacity-5 pointer-events-none">
+<span class="material-symbols-outlined text-[400px]" data-icon="verified">verified</span>
+</div>
+<div class="max-w-container-max mx-auto px-margin-desktop text-center">
+<h2 class="font-display-lg-mobile lg:font-display-lg text-display-lg-mobile lg:text-display-lg text-primary mb-6">Ready for Structural Clarity?</h2>
+<p class="font-body-lg text-body-lg text-secondary max-w-2xl mx-auto mb-10">
+                    Connect with our executive consultants today to discuss how BABCS Corp can fortify your business for sustainable, global growth.
+                </p>
+<button class="bg-primary text-on-primary px-12 py-4 font-label-sm uppercase tracking-[0.2em] hover:bg-opacity-90 transition-all shadow-lg active:scale-95">
+                    Consult an Expert
+                </button>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-12 bg-primary-container dark:bg-tertiary-container">
+<div class="flex flex-col md:flex-row justify-between items-center px-margin-desktop max-w-container-max mx-auto gap-base">
+<div class="font-headline-md text-headline-md text-on-primary dark:text-on-tertiary mb-6 md:mb-0">
+                BABCS Corp
+            </div>
+<div class="flex flex-wrap justify-center gap-gutter mb-8 md:mb-0">
+<a class="font-label-sm text-label-sm text-on-primary-container/80 dark:text-on-tertiary-container/80 hover:text-on-primary underline transition-all duration-300" href="#">Privacy Policy</a>
+<a class="font-label-sm text-label-sm text-on-primary-container/80 dark:text-on-tertiary-container/80 hover:text-on-primary underline transition-all duration-300" href="#">Terms of Service</a>
+<a class="font-label-sm text-label-sm text-on-primary-container/80 dark:text-on-tertiary-container/80 hover:text-on-primary underline transition-all duration-300" href="#">Cookie Policy</a>
+<a class="font-label-sm text-label-sm text-on-primary-container/80 dark:text-on-tertiary-container/80 hover:text-on-primary underline transition-all duration-300" href="#">Global Offices</a>
+</div>
+<p class="font-label-sm text-label-sm text-on-primary-container/60 dark:text-on-tertiary-container/60 text-center md:text-right">
+                © 2024 BABCS Corp. Strategic, Transparent, and Authoritative.
+            </p>
+</div>
+</footer>
+<script>
+        // Micro-interaction for hover states and subtle reveal
+        document.addEventListener('DOMContentLoaded', () => {
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('opacity-100', 'translate-y-0');
+                        entry.target.classList.remove('opacity-0', 'translate-y-10');
+                    }
+                });
+            }, observerOptions);
+
+            // Apply fade-in to major sections
+            document.querySelectorAll('section').forEach(section => {
+                section.classList.add('transition-all', 'duration-1000', 'ease-out', 'opacity-0', 'translate-y-10');
+                observer.observe(section);
+            });
+        });
+    </script>
+</body></html>

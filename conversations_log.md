@@ -65,6 +65,157 @@ Anything the AI or developer should know before picking this up again.
 
 ### Session - 2026-06-09
 
+**Branch:** `feat/stitch-landing-page`
+**AI Model:** OpenAI Codex (GPT-5)
+
+#### Task
+Integrate the newly extracted IT, Inquire, and Mission Stitch screens into the
+React frontend.
+
+#### Solution
+- Added responsive pages at `src/pages/it/ItPage.tsx`,
+  `src/pages/inquire/InquirePage.tsx`, and
+  `src/pages/mission/MissionPage.tsx`.
+- Added `/it`, `/inquire`, and `/mission` pathname routes and updated shared
+  and Home page navigation to use the new screens.
+- Implemented the Inquire design as a functional three-step consultation form
+  with service selection, project context, contact fields, progress, and
+  confirmation feedback.
+- Added the new page layouts to the shared service stylesheet and localized all
+  eight Stitch-hosted images in `src/assets/`.
+
+#### Troubleshooting
+- The first batched image download stalled at the image host and was stopped.
+  Missing files were downloaded with `curl` using per-file timeouts.
+- The first stylesheet patch used an incorrect insertion anchor; the file tail
+  was inspected and the styles were applied against the actual rule layout.
+
+#### Bugs Encountered
+- Stitch image hosting temporarily stalled during the initial download attempt.
+
+#### Outcome
+- [x] Completed / [ ] Partial / [ ] Blocked
+The IT, Inquire, and Mission pages are integrated and lint and build pass.
+
+#### Notes for Next Session
+- The inquiry workflow is client-side only until a backend and API are selected.
+- `stitch_extracts/` contains duplicate nested exports; they were left untouched.
+
+---
+
+### Session - 2026-06-09
+
+**Branch:** `feat/stitch-landing-page`
+**AI Model:** OpenAI Codex (GPT-5)
+
+#### Task
+Integrate the Accounting, Human Resources, and Audit Stitch extracts from the
+new `stitch_extracts/` directory into the React frontend.
+
+#### Solution
+- Added distinct page components at `src/pages/accounting/`, `src/pages/hr/`,
+  and `src/pages/audit/` based on the supplied Stitch screens.
+- Added reusable site navigation and footer components under
+  `src/components/site/`.
+- Added shared service-page styling in `src/pages/services/ServicePages.css`
+  while preserving the different composition of each Stitch design.
+- Downloaded all six hosted page photographs into `src/assets/`.
+- Added dependency-free pathname routing in `App.tsx` for `/accounting`,
+  `/hr`, and `/audit`, and updated Home page links to use those URLs.
+
+#### Troubleshooting
+- PowerShell treated the Accounting page's single extracted image URL as a
+  scalar string during batch download. The image was downloaded separately.
+
+#### Bugs Encountered
+- The first Accounting image download attempted to pass the character `h` as
+  a URI because a scalar string was indexed as though it were an array.
+
+#### Outcome
+- [x] Completed / [ ] Partial / [ ] Blocked
+All three service pages are implemented and both lint and production build pass.
+
+#### Notes for Next Session
+- The IT page still points to the Home page IT section until its Stitch extract
+  is provided.
+- Production hosting must rewrite service-page URLs to `index.html` for direct
+  visits because the frontend is a client-rendered Vite application.
+
+---
+
+### Session - 2026-06-09
+
+**Branch:** `feat/stitch-landing-page`
+**AI Model:** OpenAI Codex (GPT-5)
+
+#### Task
+Reorganize the frontend so the current landing design is stored as a page and
+the application is ready to receive additional pages.
+
+#### Solution
+- Created `frontend/src/pages/home/` for the current design.
+- Moved the page component and its styles to `HomePage.tsx` and `HomePage.css`.
+- Reduced `frontend/src/App.tsx` to the application shell that renders
+  `HomePage`, leaving it ready for routing or shared layout later.
+- Kept image assets in the shared `frontend/src/assets/` directory.
+
+#### Troubleshooting
+None.
+
+#### Bugs Encountered
+None.
+
+#### Outcome
+- [x] Completed / [ ] Partial / [ ] Blocked
+The home page is isolated under `src/pages/home/`, and lint and build pass.
+
+#### Notes for Next Session
+- Add routing when a second page is introduced and its URL is defined.
+- Future pages should follow `src/pages/<page-name>/<PageName>.tsx` with
+  page-specific styles colocated in the same folder.
+
+---
+
+### Session - 2026-06-09
+
+**Branch:** `feat/stitch-landing-page`
+**AI Model:** OpenAI Codex (GPT-5)
+
+#### Task
+Convert the downloaded Stitch design for the BABCS Professional Services Hub
+into the React frontend.
+
+#### Solution
+- Replaced the Vite starter UI with a responsive, semantic React landing page.
+- Added navigation, hero, service cards, mission content, consultation form,
+  form confirmation state, and footer in `frontend/src/App.tsx`.
+- Rebuilt the global and component styling in `frontend/src/index.css` and
+  `frontend/src/App.css` based on the supplied Stitch design system.
+- Downloaded the three Stitch-hosted photographs into `frontend/src/assets/`
+  so the page does not depend on remote image URLs.
+- Updated the document title and description in `frontend/index.html`.
+
+#### Troubleshooting
+- The first TypeScript build required `FormEvent` to use a type-only import
+  because `verbatimModuleSyntax` is enabled. The import was corrected.
+
+#### Bugs Encountered
+- `TS1484`: `FormEvent` had to be imported with `import type`.
+
+#### Outcome
+- [x] Completed / [ ] Partial / [ ] Blocked
+The Stitch landing page is implemented and both lint and production build pass.
+
+#### Notes for Next Session
+- The inquiry form currently provides client-side confirmation only; backend
+  submission should be added after the API and backend stack are selected.
+- The original Stitch export remains at the repository root as `code.html`,
+  `screen.png`, and `DESIGN.md` and was not modified.
+
+---
+
+### Session - 2026-06-09
+
 **Branch:** `main`
 **AI Model:** OpenAI Codex (GPT-5)
 
